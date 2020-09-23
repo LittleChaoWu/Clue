@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2CA0FA</color>
+    <color name="colorPrimaryDark">#2CA0FA</color>
+    <color name="colorAccent">#434242</color>
+
+    <color name="app_color">#e7e7ec</color>
+    <color name="alpha">#8e000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="gray_e0">#e0e0e0</color>
+    <color name="gray_c0">#c0c0c0</color>
+    <color name="gray_f0">#f0f0f0</color>
+    <color name="gray_ec">#ececec</color>
+    <color name="gray_c8">#C6C6C8</color>
+    <color name="gray_98">#989898</color>
+    <color name="gray_72">#727272</color>
+
+    <color name="text_black">#000000</color>
+    <color name="text_gray">#979797</color>
+    <color name="text_color">#424242</color>
+
+    <color name="main_color">#2CA0FA</color>
+    <color name="blue">#1C88E6</color>
+    <color name="button_press">#1259ac</color>
+    <color name="button_no_press">#1565c1</color>
+    <color name="route_color">#7d7dfd</color>
+
+    <color name="yellow">#f68606</color>
+
+    <color name="green">#00B911</color>
+
+    <color name="red">#ff3333</color>
+
+    <!--wheel-->
+    <color name="progress_wheel_color">#00A5C4</color>
+    <!--dialog-->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="window_background">#00000000</color>
+    <color name="black_de">#DE000000</color>
+    <color name="left_button_text">#383838</color>
+    <color name="right_button_text">#468ED0</color>
+    <color name="middle_button_text">#00796B</color>
+    <!--sign-->
+    <color name="sign_btn_start">#3d87ff</color>
+    <color name="sign_btn_end">#0661cd</color>
+    <color name="sign_relocation">#a7c3e7</color>
+</resources>

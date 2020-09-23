@@ -1,0 +1,101 @@
+ext {
+    LINYI_SHELL = "com.meiya.guardcloud.linyi"
+
+    compileSdkVersion = 29
+    buildToolsVersion = "28.0.3"
+    minSdkVersion = 26
+    targetSdkVersion = 29
+
+    versionCode = 114
+    versionName = "1.2.01"//正式
+    applicationId = LINYI_SHELL
+
+    Map<String, String> map = getConfigMap()
+    officialEnv = map.get("officialEnv")
+    devEnv = map.get("devEnv")
+    outDevEnv = map.get("outDevEnv")
+    localOneEnv = map.get("localOneEnv")
+    localTwoEnv = map.get("localTwoEnv")
+    localThreeEnv = map.get("localThreeEnv")
+    mass = map.get("mass")
+    storageRoot = map.get("storageRoot")
+    keystorePath = map.get("keystorePath")
+    //此处dependenciesPath必须要放在applicationId之后声明
+    dependenciesPath = map.get("dependenciesPath")
+    licenceKey = map.get("licenceKey")
+    hasScore = map.get("hasScore")
+    hasHelper = map.get("hasHelper")
+    hasLiveCheck = map.get("hasLiveCheck")
+    appName = map.get("appName")
+
+}
+
+/**
+ * 获取配置参数
+ * @return Map < String , String >
+ */
+Map<String, String> getConfigMap() {
+    String officialEnv
+    String devEnv
+    String outDevEnv
+    String localOneEnv
+    String localTwoEnv
+    String localThreeEnv
+    String mass
+    String storageRoot
+    String keystorePath
+    String dependenciesPath
+    String licenceKey
+    String hasScore = "false"
+    String hasHelper = "false"
+    String hasLiveCheck = "false"
+    String appName
+    switch (applicationId) {
+        case LINYI_SHELL:
+            officialEnv = "\"http://lybxjc.cn:80\""//"\"http://183.250.89.130:8318,112.6.130.240:13380\""
+            devEnv = "\"http://10.88.88.209:8318\""//"\"http://183.250.89.130:8318,http://10.88.88.209:8318,http://112.6.130.240:13380\""
+            outDevEnv = "\"http://183.250.89.130:8318\""//"\"http://183.250.89.130:8318,http://10.88.88.209:8318,http://112.6.130.240:13380\""
+            localOneEnv = "\"http://172.18.13.150:8089\""
+            localTwoEnv = "\"http://172.18.13.221:8318\""
+            localThreeEnv = "\"http://172.18.13.85:8318\""
+            mass = "\"/sdlymass\""
+            storageRoot = "\"linyi_sdk\""
+            keystorePath = "../AKeystore/linyi_guard.jks"
+            dependenciesPath = '../AConfig/linyi_config.gradle'
+            licenceKey = "\"6CEE-48C3-B7A7-3010\""
+            hasLiveCheck = "false"
+            appName = "百姓警察"
+            break
+        default:
+            officialEnv = "\"\""
+            devEnv = "\"\""
+            outDevEnv = "\"\""
+            localOneEnv = "\"\""
+            localTwoEnv = "\"\""
+            localThreeEnv = "\"\""
+            mass = "\"\""
+            storageRoot = "\"\""
+            keystorePath = "\"\""
+            dependenciesPath = "\"\""
+            licenceKey = "\"\""
+            appName = ""
+            break
+    }
+    Map<String, String> map = new HashMap<>()
+    map.put("officialEnv", officialEnv)
+    map.put("devEnv", devEnv)
+    map.put("outDevEnv", outDevEnv)
+    map.put("localOneEnv", localOneEnv)
+    map.put("localTwoEnv", localTwoEnv)
+    map.put("localThreeEnv", localThreeEnv)
+    map.put("mass", mass)
+    map.put("storageRoot", storageRoot)
+    map.put("keystorePath", keystorePath)
+    map.put("dependenciesPath", dependenciesPath)
+    map.put("licenceKey", licenceKey)
+    map.put("hasScore", hasScore)
+    map.put("hasHelper", hasHelper)
+    map.put("hasLiveCheck", hasLiveCheck)
+    map.put("appName", appName)
+    return map
+}

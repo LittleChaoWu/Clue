@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:linear_content_color="@color/text_black"
+            app:linear_item_is_detail="true"
+            app:linear_title="@string/clue_subject" />
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_broad_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:linear_item_is_detail="true"
+            app:linear_title="@string/clue_broad_type_title" />
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:linear_item_is_detail="true"
+            app:linear_title="@string/clue_type_title" />
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_mini_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:linear_item_is_detail="true"
+            app:linear_title="@string/clue_child_type_title" />
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:linear_item_is_detail="true"
+            app:linear_title="@string/content_description" />
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:linear_item_is_detail="true"
+            app:linear_suffix="@string/look_map"
+            app:linear_title="@string/report_address" />
+
+        <com.sfb.baselib.widget.form.LinearView
+            android:id="@+id/linear_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:linear_item_is_detail="true"
+            app:linear_title="@string/report_time" />
+
+        <com.sfb.baselib.widget.gridimage.GridImageView
+            android:id="@+id/mGridImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:catalog="@string/image_or_video_record_title" />
+
+        <!--处置结果、处置反馈-->
+        <LinearLayout
+            android:id="@+id/layout_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/shape_main_color_round"
+            android:gravity="center"
+            android:padding="12sp"
+            android:text="@string/clue_feedback_title"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <!--删除、上传-->
+        <LinearLayout
+            android:id="@+id/layout_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <com.sfb.baselib.widget.SingleClickView
+                android:id="@+id/tv_delete"
+                android:layout_width="150dp"
+                android:layout_height="46dp"
+                android:layout_marginRight="24dp"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@string/delete"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <com.sfb.baselib.widget.SingleClickView
+                android:id="@+id/tv_upload"
+                android:layout_width="150dp"
+                android:layout_height="46dp"
+                android:background="@drawable/selector_button"
+                android:gravity="center"
+                android:text="@string/upload"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.sfb.baselib.widget.pulltorefrsh.CustomPtrFrameLayout
+        android:id="@+id/mPtrFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.sfb.baselib.widget.pulltorefrsh.RecyclerListView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.sfb.baselib.widget.pulltorefrsh.CustomPtrFrameLayout>
+
+
+</LinearLayout>

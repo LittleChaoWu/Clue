@@ -1,0 +1,125 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sfb.baselib">
+
+    <!-- 摄像头权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!-- 内存写权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />  <!-- 向SD卡中创建或者删除的权限。 -->
+    <uses-permission android:name="andorid.permission.MONUN_UNMOUNT_FILESYSTEMS" />    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 允许访问振动设备 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 请求安装的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 用于读取手机当前的状态 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" /> <!-- 读取系统信息，包含系统版本等信息，用作统计 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" /> <!-- 获取统计数据 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" /> <!-- 获取打电话权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /><!--9.0开启前台服务的时候需要一定要添加此权限，否则会出错-->
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true">
+        <!-- 百度地图 -->
+<!--        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="W38wvD5uhWhqPYYmuMgh0Q1f" />-->
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" /> <!-- 百度地图 -->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver android:name=".receive.NotificationReceiver">
+            <intent-filter>
+                <action android:name="com.meiya.baselib.notification.action" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".components.service.BaseService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".service.UploadService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.map.MapActivity"
+            android:label="@string/look_map"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppLinYiTheme" />
+
+        <activity
+            android:name="com.soundcloud.android.crop.CropImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" />
+
+        <activity
+            android:name=".ui.cache.CacheActivity"
+            android:label="@string/cache_record"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppLinYiTheme" />
+
+        <activity
+            android:name="com.sfb.clue.AddClueActivity"
+            android:label="@string/add_clue_label"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppLinYiTheme"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.sfb.clue.ClueReportActivity"
+            android:label="@string/main_clue_report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppLinYiTheme" />
+
+        <activity
+            android:name="com.sfb.clue.ClueDetailActivity"
+            android:label="@string/clue_detail_label"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppLinYiTheme" />
+
+        <activity
+            android:name="com.sfb.clue.ClueFeedbackActivity"
+            android:label="@string/clue_feedback_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppLinYiTheme" />
+
+        <activity
+            android:name=".ui.media.ImageTakeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CameraTheme" />
+    </application>
+
+</manifest>

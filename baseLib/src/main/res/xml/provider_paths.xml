@@ -1,0 +1,9 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <root-path name="name" path="." />
+    <!--针对android7.0下载安装包的路径-->
+    <external-path name="guardcloud.apk" path="${storageRoot}/data/cache" />
+    <external-path name="name_DCIM" path="DCIM" />
+    <external-path name="name_Pictures" path="Pictures" />
+    <external-path name="name_data_video" path="${storageRoot}/data/Video" />
+    <external-path name="name_data_image" path="${storageRoot}/data/Image" />
+</paths>
