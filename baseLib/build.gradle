@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'org.greenrobot.greendao'
 apply from: '../AConfig/config.gradle'
 
+group='com.sfb'
+
 android {
     compileSdkVersion this.ext.compileSdkVersion
     defaultConfig {
