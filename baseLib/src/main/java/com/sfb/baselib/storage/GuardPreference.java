@@ -21,7 +21,7 @@ public class GuardPreference {
     private String token;//token
 
     @PrefKey(key = "environment_value")
-    @DefaultInt(NetworkConfig.OUT_DEV_ENV)
+    @DefaultInt(NetworkConfig.OFFICIAL_ENV)
     private int environmentValue;//网络环境
 
     @PrefKey(key = "server_time")
